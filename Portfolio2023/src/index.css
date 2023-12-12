@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("./assets/fonts/Satoshi-Bold.otf");
+}
+@font-face {
+  font-family: "Cabinet-Bold";
+  src: url("./assets/fonts/CabinetGrotesk-Bold.otf");
+}
+
+@font-face {
+  font-family: "Cabinet";
+  src: url("./assets/fonts/CabinetGrotesk-Regular.otf");
+}
+@font-face {
+  font-family: "Satoshi-Thin";
+  src: url("./assets/fonts/Satoshi-Regular.otf");
+}
+
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#414833, #414833);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.link-underline-black {
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(#414833, #414833);
+}
+
+.link-underline:hover {
+  background-size: 100% 3px;
+  background-position: 0 100%;
+}
