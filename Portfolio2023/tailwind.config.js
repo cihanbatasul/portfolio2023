@@ -1,9 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 import plugin from "tailwindcss/plugin";
+const colors = require("tailwindcss/colors");
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     colors: {
+      ...colors,
       darkGreen: "#414833",
       lightBeige: "#B6AD90",
       lightGreen: "#656D4A",

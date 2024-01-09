@@ -1,4 +1,6 @@
 import ContactButton from "src/components/navbar/ContactButton";
+import MenuButton from "./MenuButton";
+import { useState } from "react";
 
 interface NavProps {
   scrollToRef: {
@@ -23,8 +25,15 @@ const NavigationMobile = ({ scrollToRef }: NavProps) => {
   const handleClick = (ref: React.MutableRefObject<HTMLElement | null>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
-
-  return <div>MobileNavigation</div>;
+  const [isActive, setIsActive] = useState<boolean>(false);
+  return (
+    <div className="sticky z-50 top-0 flex justify-between bg-white p-6 ">
+      <div>cihan</div>
+      <div>
+        <MenuButton isActive={isActive} setIsActive={setIsActive} />
+      </div>
+    </div>
+  );
 };
 
 const NavigationFull = ({ scrollToRef }: NavProps) => {

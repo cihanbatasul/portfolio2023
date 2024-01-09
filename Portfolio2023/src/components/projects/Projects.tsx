@@ -1,15 +1,23 @@
 import { forwardRef } from "react";
+import MobileProj from "./MobileProj";
 import SectionHeader from "../SectionHeader";
 import Double from "./Double";
 import projects from "src/static/projects";
-const Projects = forwardRef<HTMLDivElement>((_, ref) => {
+type Props = {
+  isMobile: boolean;
+};
+const Projects = forwardRef<HTMLDivElement, Props>((props: Props, ref) => {
   return (
     <div
-      className="min-h-screen h-full antialiased flex flex-col p-16"
+      className="min-h-screen h-full antialiased flex flex-col p-3  md:p-16"
       ref={ref}
     >
       <SectionHeader text="projects" />
-      <Double projects={[projects[0], projects[1]]} />
+      {props.isMobile ? (
+        <MobileProj />
+      ) : (
+        <Double projects={[projects[0], projects[1]]} />
+      )}
     </div>
   );
 });

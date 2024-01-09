@@ -70,6 +70,7 @@ const Double = (props: Props) => {
         </div>
         <div className=" body text-base p-2.5  ">
           <div className="w-full flex flex-col md:flex-row gap-3 items-center">
+            e{" "}
             <p className="font-satoshi text-xl md:text-4xl">
               {props.projects[1]?.year}
             </p>

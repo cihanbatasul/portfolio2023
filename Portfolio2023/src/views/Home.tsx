@@ -78,9 +78,13 @@ const Home = () => {
       <Hero ref={heroRef} />
       <About ref={aboutRef} />
       {!isMobile ? <Services ref={servicesRef} /> : null}
-      <Projects ref={projectsRef} />
+      <Projects ref={projectsRef} isMobile={isMobile} />
       <Contact ref={contactRef} />
-      <Scroller scrollToRef={scrollToRef} currentSection={currentSection} />
+      <Scroller
+        isMobile={isMobile}
+        scrollToRef={scrollToRef}
+        currentSection={currentSection}
+      />
       <Footer />
     </div>
   );

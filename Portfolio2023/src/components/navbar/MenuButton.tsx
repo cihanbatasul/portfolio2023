@@ -1,0 +1,30 @@
+import { motion, easeInOut } from "framer-motion";
+import React, { SetStateAction } from "react";
+type Props = {
+  isActive: boolean;
+  setIsActive: React.Dispatch<SetStateAction<boolean>>;
+};
+
+const MenuButton = (props: Props) => {
+  return (
+    <div
+      onClick={() => props.setIsActive(!props.isActive)}
+      className="relative h-[40px] w-[200px] rounded-2xl cursor-pointer overflow-hidden uppercase text-white font-satoshiThin text-2xl"
+    >
+      <motion.div
+        animate={{ top: props.isActive ? "-100%" : "0" }}
+        transition={{ duration: 0.5, ease: [0.68, -0.6, 0.32, 1.6] }}
+        className="relative w-full h-full"
+      >
+        <div className="w-full h-full  bg-lightGreen   flex items-center justify-center overflow-hidden">
+          <p>Menu</p>
+        </div>
+        <div className="w-full h-full text-white font-satoshiThin bg-black text-2xl absolute top-full flex items-center justify-center ">
+          <p>Close</p>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default MenuButton;

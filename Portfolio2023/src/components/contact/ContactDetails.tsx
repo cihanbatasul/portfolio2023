@@ -8,7 +8,7 @@ const ContactDetails = () => {
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: easeIn }}
       viewport={{ once: true }}
-      className="w-full  m-auto "
+      className="w-full  m-auto pt-12 pb-3 md:pt-0 md:pb-0 "
     >
       <div className="w-full flex flex-col items-center">
         <h2 className="font-satoshi text-5xl antialiased">details</h2>

@@ -5,17 +5,15 @@ import ContactDetails from "./ContactDetails";
 import Toast from "../toast/Toast";
 import { motion, easeIn } from "framer-motion";
 
-
-
 const Contact = forwardRef<HTMLDivElement>((_, ref) => {
   const [emailResponse, setEmailResponse] = useState<boolean | null>(null);
   return (
     <div
-      className="relative w-full min-h-screen h-full  overflow-hidden antialiased p-48  flex flex-col  "
+      className="relative w-full min-h-screen h-full  overflow-hidden antialiased  p-3 md:p-48  flex flex-col  "
       ref={ref}
     >
       <SectionHeader text="contact" />
-      <div className="w-full flex flex-col  md:flex-row mt-16 gap-3 md:gap-0">
+      <div className="w-full flex flex-col  md:flex-row mt-16 gap-3 md:gap-0  ">
         <div className="w-full flex flex-col items-center ">
           <motion.p
             initial={{ opacity: 0 }}
