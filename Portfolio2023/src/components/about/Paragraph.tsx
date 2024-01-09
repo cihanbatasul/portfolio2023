@@ -1,6 +1,5 @@
-import React, { HTMLAttributes } from "react";
 import { cn } from "src/cn";
-import { motion, easeInOut } from "framer-motion";
+import { motion } from "framer-motion";
 import { easeIn } from "framer-motion/dom";
 type Props = {
   text: string;

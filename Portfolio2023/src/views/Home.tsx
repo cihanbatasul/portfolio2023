@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import Contact from "src/components/contact/Contact";
 import Services from "src/components/services/Services";
 import About from "src/components/about/About";
@@ -7,9 +7,9 @@ import Projects from "src/components/projects/Projects";
 import Navigation from "src/components/navbar/Navigation";
 import Footer from "src/components/footer/Footer";
 import Scroller from "src/components/utils/Scroller";
-
 const Home = () => {
-  const [currentSection, setCurrentSection] = useState<string | null>(null);
+  const [currentSection, setCurrentSection] = useState<string>("");
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 640);
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -22,7 +22,18 @@ const Home = () => {
     projectsRef,
     contactRef,
   };
-
+  const setMobile = () => {
+    setIsMobile(window.innerWidth <= 640);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", setMobile);
+    return () => {
+      window.removeEventListener("resize", setMobile);
+    };
+  }, []);
+  useEffect(() => {
+    console.log(isMobile);
+  }, [isMobile]);
   const handleScroll = () => {
     const offsetTolerance = 500;
     const scrollTop = window.scrollY;
@@ -48,7 +59,7 @@ const Home = () => {
       }
     }
 
-    setCurrentSection(null);
+    setCurrentSection("");
   };
 
   useEffect(() => {
@@ -63,14 +74,14 @@ const Home = () => {
 
   return (
     <div className="relative">
-      <Navigation scrollToRef={scrollToRef} />
+      <Navigation scrollToRef={scrollToRef} isMobile={isMobile} />
       <Hero ref={heroRef} />
       <About ref={aboutRef} />
       <Services ref={servicesRef} />
       <Projects ref={projectsRef} />
       <Contact ref={contactRef} />
-      <Scroller currentSection={currentSection} />
-      <Footer currentSection={currentSection} />
+      <Scroller scrollToRef={scrollToRef} currentSection={currentSection} />
+      <Footer />
     </div>
   );
 };

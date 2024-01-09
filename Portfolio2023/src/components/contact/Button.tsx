@@ -1,12 +1,15 @@
 import { motion, easeInOut } from "framer-motion";
 import { useRef } from "react";
-type Props = {};
+type Props = {
+  onClick: () => void;
+};
 
 const Button = (props: Props) => {
   const buttonRef = useRef(null);
 
   return (
     <motion.button
+      onClick={props.onClick}
       initial={{ scale: 1 }}
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.6, ease: easeInOut, type: "spring" }}

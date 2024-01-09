@@ -1,9 +1,8 @@
-import React, { forwardRef, useEffect } from "react";
+import { forwardRef } from "react";
 import SectionHeader from "../SectionHeader";
 import Double from "./Double";
 import projects from "src/static/projects";
-type Props = {};
-const Projects = forwardRef<HTMLDivElement, Props>((props, ref) => {
+const Projects = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <div
       className="min-h-screen h-full antialiased flex flex-col p-16"

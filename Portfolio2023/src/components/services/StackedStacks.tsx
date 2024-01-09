@@ -1,9 +1,8 @@
 import { stacks } from "src/static/stacks";
 import Card from "./Card";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import Lenis from "@studio-freight/lenis";
-import Paragraph from "./Paragraph";
 const StackedStacks = () => {
   const stackElements = stacks;
   const container = useRef(null);
@@ -13,11 +12,7 @@ const StackedStacks = () => {
   });
   const lenis = new Lenis();
 
-  lenis.on("scroll", (e) => {
-    console.log(e);
-  });
-
-  function raf(time) {
+  function raf(time: number) {
     lenis.raf(time);
     requestAnimationFrame(raf);
   }

@@ -1,8 +1,7 @@
 import { MailsIcon, PhoneIcon, GithubIcon, LinkedinIcon } from "lucide-react";
 import { motion, easeIn } from "framer-motion";
-type Props = {};
 
-const ContactDetails = (props: Props) => {
+const ContactDetails = () => {
   return (
     <motion.div
       initial={{ opacity: 0, x: 200 }}
@@ -24,11 +23,25 @@ const ContactDetails = (props: Props) => {
       <div className="w-full flex flex-col items-center">
         <h2 className="font-satoshi text-5xl antialiased pt-6 ">socials</h2>
         <div className=" mt-6 font-cabinet text-3xl flex   justify-between gap-3 items-center">
-          <GithubIcon /> <p>Github</p>
+          <GithubIcon />{" "}
+          <a
+            className="link link-underline link-underline-black cursor-pointer "
+            href="https://github.com/cihanbatasul"
+            target="_blank"
+          >
+            Github
+          </a>
         </div>
 
         <div className=" mt-6 font-cabinet text-3xl flex gap-3 justify-between items-center">
-          <LinkedinIcon /> <p>LinkedIn</p>
+          <LinkedinIcon />{" "}
+          <a
+            className="link link-underline link-underline-black cursor-pointer "
+            href="https://linkedin.com/in/cihan-batasul-693504260"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
         </div>
       </div>
     </motion.div>

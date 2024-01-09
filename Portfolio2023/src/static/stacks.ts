@@ -1,6 +1,5 @@
 import tailwind from "src/assets/brands/tailwind.svg";
 import html from "src/assets/brands/html5.svg";
-import css3 from "src/assets/brands/css3-alt.svg";
 import react from "src/assets/brands/react.svg";
 import vue from "src/assets/brands/vuejs.svg";
 import php from "src/assets/brands/php.svg";
@@ -19,6 +18,8 @@ export const stacks = [
       { name: "Typescript", icon: typescript },
       { name: "Golang", icon: go },
       { name: "PHP", icon: php },
+
+      { name: "HTML", icon: html },
     ],
     color: "#656D4A",
     fontColor: "#b6bd9e",

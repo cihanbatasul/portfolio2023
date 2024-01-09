@@ -1,10 +1,8 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import SectionHeader from "../SectionHeader";
 import Paragraph from "./Paragraph";
 import about from "src/static/about";
-type Props = {};
-
-const About = forwardRef<HTMLDivElement, Props>((props, ref) => {
+const About = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <div className="w-full h-fit p-16 flex flex-col items-center " ref={ref}>
       <SectionHeader text="about" />
@@ -19,7 +17,7 @@ const About = forwardRef<HTMLDivElement, Props>((props, ref) => {
         />
         <Paragraph
           className={`font-satoshiThin text-3xl  max-w-4xl `}
-          text={about[1].text2}
+          text={about[1].text}
         />
       </div>
     </div>

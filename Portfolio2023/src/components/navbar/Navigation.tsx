@@ -1,6 +1,6 @@
 import ContactButton from "src/components/navbar/ContactButton";
 
-interface Props {
+interface NavProps {
   scrollToRef: {
     aboutRef: React.RefObject<HTMLDivElement>;
     servicesRef: React.RefObject<HTMLDivElement>;
@@ -9,7 +9,25 @@ interface Props {
   };
 }
 
-const Navigation: React.FC<Props> = ({ scrollToRef }: Props) => {
+interface NavWrapperProps extends NavProps {
+  isMobile: boolean;
+}
+
+const NavigationMobile = ({ scrollToRef }: NavProps) => {
+  const links = [
+    { label: "about", ref: scrollToRef.aboutRef },
+    { label: "services", ref: scrollToRef.servicesRef },
+    { label: "projects", ref: scrollToRef.projectsRef },
+  ];
+
+  const handleClick = (ref: React.MutableRefObject<HTMLElement | null>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return <div>MobileNavigation</div>;
+};
+
+const NavigationFull = ({ scrollToRef }: NavProps) => {
   const links = [
     { label: "about", ref: scrollToRef.aboutRef },
     { label: "services", ref: scrollToRef.servicesRef },
@@ -44,4 +62,11 @@ const Navigation: React.FC<Props> = ({ scrollToRef }: Props) => {
   );
 };
 
+const Navigation = ({ isMobile, scrollToRef }: NavWrapperProps) => {
+  return isMobile ? (
+    <NavigationMobile scrollToRef={scrollToRef} />
+  ) : (
+    <NavigationFull scrollToRef={scrollToRef} />
+  );
+};
 export default Navigation;
