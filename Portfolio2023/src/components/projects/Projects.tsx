@@ -5,6 +5,7 @@ import Double from "./Double";
 import projects from "src/static/projects";
 type Props = {
   isMobile: boolean;
+  isLimit: boolean;
 };
 const Projects = forwardRef<HTMLDivElement, Props>((props: Props, ref) => {
   return (
@@ -14,7 +15,9 @@ const Projects = forwardRef<HTMLDivElement, Props>((props: Props, ref) => {
     >
       <SectionHeader text="projects" />
       {props.isMobile ? (
-        <MobileProj />
+        <MobileProj projects={projects} />
+      ) : props.isLimit ? (
+        <MobileProj projects={projects} />
       ) : (
         <Double projects={[projects[0], projects[1]]} />
       )}

@@ -10,6 +10,9 @@ import Scroller from "src/components/utils/Scroller";
 const Home = () => {
   const [currentSection, setCurrentSection] = useState<string>("");
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 640);
+  const [isLimit, setIsLimit] = useState<boolean>(
+    window.innerWidth <= 1536 && window.innerWidth > 640,
+  );
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
@@ -25,10 +28,17 @@ const Home = () => {
   const setMobile = () => {
     setIsMobile(window.innerWidth <= 640);
   };
+
+  const setLimit = () => {
+    setIsLimit(window.innerWidth <= 1536 && window.innerWidth > 640);
+  };
+
   useEffect(() => {
     window.addEventListener("resize", setMobile);
+    window.addEventListener("resize", setLimit);
     return () => {
       window.removeEventListener("resize", setMobile);
+      window.removeEventListener("resize", setLimit);
     };
   }, []);
   useEffect(() => {
@@ -77,8 +87,8 @@ const Home = () => {
       <Navigation scrollToRef={scrollToRef} isMobile={isMobile} />
       <Hero ref={heroRef} />
       <About ref={aboutRef} />
-      {!isMobile ? <Services ref={servicesRef} /> : null}
-      <Projects ref={projectsRef} isMobile={isMobile} />
+      <Services ref={servicesRef} isMobile={isMobile} />
+      <Projects ref={projectsRef} isMobile={isMobile} isLimit={isLimit} />
       <Contact ref={contactRef} />
       <Scroller
         isMobile={isMobile}
