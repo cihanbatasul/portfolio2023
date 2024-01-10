@@ -77,7 +77,7 @@ const Home = () => {
       <Navigation scrollToRef={scrollToRef} isMobile={isMobile} />
       <Hero ref={heroRef} />
       <About ref={aboutRef} />
-      <Services ref={servicesRef} />
+      {!isMobile ? <Services ref={servicesRef} /> : null}
       <Projects ref={projectsRef} />
       <Contact ref={contactRef} />
       <Scroller scrollToRef={scrollToRef} currentSection={currentSection} />

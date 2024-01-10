@@ -29,7 +29,7 @@ const Input = (props: Props) => {
 
   if (props.msg) {
     return (
-      <div className="relative w-full ">
+      <div className="relative w-full  ">
         <textarea
           onChange={handleInputChange}
           name={props.text.toLowerCase()}

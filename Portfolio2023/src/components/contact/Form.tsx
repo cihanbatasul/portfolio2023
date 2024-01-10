@@ -46,9 +46,9 @@ const Form = (props: responseProps) => {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, ease: easeIn }}
       viewport={{ once: true }}
-      className="w-full m-auto flex flex-col gap-6"
+      className="w-full m-auto flex flex-col gap-6 "
     >
-      <div className="flex w-full gap-3 ">
+      <div className="flex  w-full gap-3 ">
         <Input onChange={setData} type="text" text="Name" />
         <Input onChange={setData} type="email" text="Email" />
       </div>
