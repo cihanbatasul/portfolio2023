@@ -2,6 +2,7 @@ import ContactButton from "src/components/navbar/ContactButton";
 import MenuButton from "./MenuButton";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import logo from "src/assets/120.svg";
 
 interface NavProps {
   scrollToRef: {
@@ -19,30 +20,27 @@ interface NavWrapperProps extends NavProps {
 const variants = {
   open: {
     width: 200,
-    height: 350
+    height: 300,
   },
   closed: {
     width: 200,
-    height: 40
+    height: 40,
   },
-
-}
+};
 const perspective = {
   initial: {
     opacity: 0,
-    rotateX: 90
+    rotateX: 90,
   },
-  enter: (index: number) => (
-    {
-      opacity: 1,
-      rotateX: 0,
-      transition: {delay: 0.5 + (index * 0.1)}
-    }
-  ),
+  enter: (index: number) => ({
+    opacity: 1,
+    rotateX: 0,
+    transition: { delay: 0.5 + index * 0.1 },
+  }),
   exit: {
-    opacity: 0
-  }
-}
+    opacity: 0,
+  },
+};
 const NavigationMobile = ({ scrollToRef }: NavProps) => {
   const links = [
     { label: "about", ref: scrollToRef.aboutRef },
@@ -56,46 +54,53 @@ const NavigationMobile = ({ scrollToRef }: NavProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   return (
     <div className="sticky z-50 top-0 flex justify-between bg-white p-6 ">
-      <div>cihan</div>
-        <motion.div 
+      <div className="flex items-center">
+        <img className="h-16" src={logo} />
+      </div>
+      <motion.div
         variants={variants}
         animate={isActive ? "open" : "closed"}
         initial="closed"
-        transition={{duration: 0.6, delay: 0.25, ease: [0.76, 0, 0.24, 1]}}
-        className="absolute top-2 right-2 w-[280px] h-[200px] bg-lightGreen rounded-md flex items-center justify-center ">
-<AnimatePresence>
-{isActive && <motion.div  className="h-full pt-20 " >
-        <motion.ul  className="flex flex-col items-center gap-3 font-cabinet font-light text-white">
-          {links.map((link, index) => (
-            <motion.li 
-            variants={perspective}
-            animate="enter"
-            exit="exit"
-            custom={index}
-            initial="initial"
-            key={link.label}>
-              <p
-                className=" cursor-pointer text-2xl"
-                onClick={() => handleClick(link.ref)}
-              >
-                {link.label}
-              </p>
-            </motion.li>
-          ))}
-          <motion.li 
-          variants={perspective}
-          animate="enter"
-          exit="exit"
-          custom={3}
-          initial="initial"
-          onClick={() => handleClick(scrollToRef.contactRef)}>
-            <p className="cursor-pointer text-2xl">contact me</p>
-          </motion.li>
-        </motion.ul>
-      </motion.div>}
-      </AnimatePresence>
-        </motion.div>
-        <MenuButton isActive={isActive} setIsActive={setIsActive} />
+        transition={{ duration: 0.6, delay: 0.25, ease: [0.76, 0, 0.24, 1] }}
+        className="absolute top-2 right-2 w-[280px] h-[200px] bg-lightGreen rounded-md flex items-center justify-center "
+      >
+        <AnimatePresence>
+          {isActive && (
+            <motion.div className="h-full pt-20 ">
+              <motion.ul className="flex flex-col items-center gap-3 font-cabinet font-light text-white">
+                {links.map((link, index) => (
+                  <motion.li
+                    variants={perspective}
+                    animate="enter"
+                    exit="exit"
+                    custom={index}
+                    initial="initial"
+                    key={link.label}
+                  >
+                    <p
+                      className=" cursor-pointer text-2xl"
+                      onClick={() => handleClick(link.ref)}
+                    >
+                      {link.label}
+                    </p>
+                  </motion.li>
+                ))}
+                <motion.li
+                  variants={perspective}
+                  animate="enter"
+                  exit="exit"
+                  custom={3}
+                  initial="initial"
+                  onClick={() => handleClick(scrollToRef.contactRef)}
+                >
+                  <p className="cursor-pointer text-2xl">contact me</p>
+                </motion.li>
+              </motion.ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+      <MenuButton isActive={isActive} setIsActive={setIsActive} />
     </div>
   );
 };
@@ -113,7 +118,9 @@ const NavigationFull = ({ scrollToRef }: NavProps) => {
 
   return (
     <div className="sticky top-0 bg-white  z-50 flex justify-between items-center p-6">
-      <div className="font-satoshi font-extrabold text-4xl ">cihan</div>
+      <div>
+        <img className="h-16" src={logo} />
+      </div>
       <div>
         <ul className="flex flex-row items-center gap-3 font-cabinet font-light ">
           {links.map((link) => (

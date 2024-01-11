@@ -85,7 +85,6 @@ const Home = () => {
   return (
     <div className="relative">
       <Navigation scrollToRef={scrollToRef} isMobile={isMobile} />
-      <Hero ref={heroRef} />
       <About ref={aboutRef} />
       <Services ref={servicesRef} isMobile={isMobile} />
       <Projects ref={projectsRef} isMobile={isMobile} isLimit={isLimit} />
