@@ -3,10 +3,10 @@ import SectionHeader from "../SectionHeader";
 import Form from "./Form";
 import ContactDetails from "./ContactDetails";
 import Toast from "../toast/Toast";
-import { motion, easeIn } from "framer-motion";
+import { motion, easeIn, AnimatePresence} from "framer-motion";
 
 const Contact = forwardRef<HTMLDivElement>((_, ref) => {
-  const [emailResponse, setEmailResponse] = useState<boolean | null>(null);
+  const [emailResponse, setEmailResponse] = useState<boolean | null>(true);
   return (
     <div
       className="relative w-full min-h-screen h-full  overflow-hidden antialiased  p-3 md:p-48  flex flex-col  "
@@ -28,7 +28,9 @@ const Contact = forwardRef<HTMLDivElement>((_, ref) => {
         </div>
         <ContactDetails />
       </div>
-      <Toast show={emailResponse} />
+<AnimatePresence>
+      <Toast show={emailResponse} setShow={setEmailResponse} />
+      </AnimatePresence>
     </div>
   );
 });

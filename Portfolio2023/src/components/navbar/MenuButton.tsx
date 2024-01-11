@@ -9,7 +9,7 @@ const MenuButton = (props: Props) => {
   return (
     <div
       onClick={() => props.setIsActive(!props.isActive)}
-      className="absolute top-2 right-2 h-[40px] w-[200px] rounded-2xl cursor-pointer overflow-hidden uppercase  font-satoshiThin text-2xl"
+      className="absolute top-2 right-2 h-[40px] w-[200px] rounded-md cursor-pointer overflow-hidden uppercase  font-satoshiThin text-2xl"
     >
       <motion.div
         animate={{ top: props.isActive ? "-100%" : "0" }}
