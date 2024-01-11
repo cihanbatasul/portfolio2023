@@ -22,7 +22,9 @@ export const stacks = [
       { name: "HTML", icon: html },
     ],
     color: "#656D4A",
+    colorDynamic: "bg-[#656D4A]",
     fontColor: "#b6bd9e",
+    fontColorDynamic: "text-[#b6bd9e]",
     text: "Proficient in a diverse set of programming languages, including JavaScript, TypeScript, Golang, and PHP, I leverage these tools to create dynamic and high-performance web solutions.",
   },
   {
@@ -33,8 +35,9 @@ export const stacks = [
     ],
 
     color: "#B6AD90",
-
+    colorDynamic: "bg-[#B6AD90]",
     fontColor: "#dad6c7",
+    fontColorDynamic: "text-[#dad6c7]",
     text: "In the realm of frameworks, I excel in building dynamic and interactive user interfaces using either React or Vue.js.",
   },
   {
@@ -46,7 +49,9 @@ export const stacks = [
       { name: "tailwindcss", icon: tailwind },
     ],
     color: "#414833",
+    colorDynamic: "bg-[#414833]", 
     fontColor: "#a4af8e",
+    fontColorDynamic: "text-[#a4af8e]",
     text: "Utilizing Docker for streamlined development, PostgreSQL for robust databases, Git for efficient version control, and Tailwind CSS for responsive interfaces, I ensure a harmonious blend of creativity and technology.",
   },
 ];
