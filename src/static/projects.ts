@@ -7,6 +7,7 @@ const projects = [
     src: "pathfinder2.png",
     year: 2022,
     tech: ["React", "Algorithms", "CSS"],
+    url: "https://pathfinder.cihanbatasul.com/"
   },
   {
     name: "Books API",
@@ -16,6 +17,7 @@ const projects = [
     src: "booksapi.png",
     year: 2023,
     tech: ["React", "Golang", "TailwindCSS"],
+    url: "https://books.cihanbatasul.com/"
   },
 ];
 export default projects;

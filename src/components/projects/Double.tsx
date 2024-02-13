@@ -1,5 +1,7 @@
 import { MouseEvent, useRef } from "react";
 import { motion, easeIn } from "framer-motion";
+import { MousePointer } from "lucide-react";
+
 interface Project {
   name: string;
   client: string;
@@ -7,6 +9,7 @@ interface Project {
   src: string;
   year: number;
   tech: string[];
+  url: string
 }
 
 type Props = {
@@ -62,11 +65,11 @@ const Double = (props: Props) => {
         className="w-full h-full  md:w-[66.66%] md:h-[45vw] mt-[10vh] "
       >
         <div className=" relative  ">
-          <img
+        <a href={props.projects[0].url} target="_blank"><img
             className={`object-cover rounded-lg`}
             src={`/projectpics/${props.projects[0]?.src}`}
             alt="image"
-          />
+          /></a>
         </div>
         <div className=" body text-base p-2.5  ">
           <div className="w-full flex flex-col md:flex-row gap-3 items-center">
@@ -85,9 +88,9 @@ const Double = (props: Props) => {
             </div>{" "}
           </div>
 
-          <h3 className="text-[1.2em] mb-2 mt-0 font-satoshi">
+          <div className="flex gap-3 items-center"><h3 className="text-[1.2em] mb-2 mt-0 font-satoshi">
             {props.projects[0]?.name}
-          </h3>
+          </h3><a href={props.projects[0].url} target="_blank"><MousePointer/></a></div>
           <p className=" m-0 font-cabinet text-3xl">
             {props.projects[0]?.description}
           </p>
@@ -100,11 +103,11 @@ const Double = (props: Props) => {
         className="w-full md:w-[33.33%] h-full md:h-[45vw] mt-[10vh] "
       >
         <div className=" relative">
-          <img
+          <a href={props.projects[1].url} target="_blank"><img
             className={`object-cover rounded-lg`}
             src={`/projectpics/${props.projects[1]?.src}`}
             alt="image"
-          />
+          /></a>
         </div>
         <div className="body text-base p-2.5  ">
           <div className="flex flex-col md:flex-row gap-3 items-center">
@@ -121,9 +124,9 @@ const Double = (props: Props) => {
               </ul>
             </div>{" "}
           </div>
-          <h3 className="text-[1.2em] mb-2 mt-0 text-5xl font-satoshi">
+          <div className="flex gap-3 items-center"><h3 className="text-[1.2em] mb-2 mt-0 font-satoshi">
             {props.projects[1]?.name}
-          </h3>
+          </h3><a href={props.projects[1].url} target="_blank"><MousePointer/></a></div>
           <p className=" m-0 text-3xl font-cabinet">
             {props.projects[1]?.description}
           </p>

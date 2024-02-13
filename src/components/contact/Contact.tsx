@@ -13,7 +13,7 @@ const Contact = forwardRef<HTMLDivElement>((_, ref) => {
       ref={ref}
     >
       <SectionHeader text="contact" />
-      <div className="w-full flex flex-col  md:flex-row mt-16 gap-3 md:gap-0  ">
+      <div className="w-full flex flex-col  lg:flex-row mt-16 gap-3 md:gap-32 lg:gap-0  ">
         <div className="w-full flex flex-col items-center ">
           <motion.p
             initial={{ opacity: 0 }}

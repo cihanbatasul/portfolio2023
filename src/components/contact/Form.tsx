@@ -1,4 +1,4 @@
-import React, { SetStateAction, useState } from "react";
+import React, { SetStateAction, useEffect, useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
 import { motion, easeIn } from "framer-motion";
@@ -20,8 +20,9 @@ const Form = (props: responseProps) => {
   });
 
   const sendEmail = async () => {
-    const url = "http://cihanbatasul.com/email/";
+    const url = "https://cihanbatasul.com:8080/email/";
     try {
+      console.log(data)
       const response = await fetch(url, {
         method: "POST",
         headers: {
@@ -39,7 +40,9 @@ const Form = (props: responseProps) => {
       console.error(error);
     }
   };
-
+useEffect(() => {
+console.log(data)
+}, [data])
   return (
     <motion.div
       initial={{ opacity: 0, x: -200 }}

@@ -55,10 +55,10 @@ const Card = (props: Props) => {
         >
           {props.info.title.toUpperCase()}
         </motion.h1>
-        <div className="w-full flex flex-col items-center h-full  ">
+        <div className="w-full  flex flex-col items-center h-full   ">
           <div className="flex  gap-6 pt-16  ">
             {props.info.items.map((tech, i) => (
-              <div className="flex flex-col items-center gap-6">
+              <div className="flex flex-col items-center gap-6 ">
                 <p
                   style={{ color: props.info.fontColor }}
                   className="font-cabinet text-4xl"
