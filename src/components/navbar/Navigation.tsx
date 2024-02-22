@@ -1,6 +1,6 @@
 import ContactButton from "src/components/navbar/ContactButton";
 import MenuButton from "./MenuButton";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, easeIn, motion } from "framer-motion";
 import { useState } from "react";
 import logo from "/120.svg";
 
@@ -41,6 +41,19 @@ const perspective = {
     opacity: 0,
   },
 };
+
+type logoProps ={
+  className: string 
+}
+const NavLogo = ({className}: logoProps) => {
+
+  return (
+    <div className={className}>
+
+    </div>
+  )
+}
+
 const NavigationMobile = ({ scrollToRef }: NavProps) => {
   const links = [
     { label: "about", ref: scrollToRef.aboutRef },
@@ -53,16 +66,14 @@ const NavigationMobile = ({ scrollToRef }: NavProps) => {
   };
   const [isActive, setIsActive] = useState<boolean>(false);
   return (
-    <div className="sticky z-50 top-0 flex justify-between bg-white p-6 ">
-      <div className="flex items-center">
-        <img className="h-16" src={logo} />
-      </div>
+    <div className="sticky z-50 top-0 flex justify-between  bg-white p-6 ">
+      <NavLogo className="mobileNavLogo"/>
       <motion.div
         variants={variants}
         animate={isActive ? "open" : "closed"}
         initial="closed"
         transition={{ duration: 0.6, delay: 0.25, ease: [0.76, 0, 0.24, 1] }}
-        className="absolute top-2 right-2 w-[280px] h-[200px] bg-lightGreen rounded-md flex items-center justify-center "
+        className="absolute top-2 right-2 w-[280px] h-[200px] bg-[#514F46] rounded-md flex items-center justify-center "
       >
         <AnimatePresence>
           {isActive && (
@@ -117,16 +128,14 @@ const NavigationFull = ({ scrollToRef }: NavProps) => {
   };
 
   return (
-    <div className="sticky top-0 bg-white  z-50 flex justify-between items-center p-6">
+    <motion.div initial={{ opacity: 0}} animate={{opacity: 1 }} transition={{duration: 1.5, ease: easeIn, delay: 1.2}} className="sticky top-0 bg-white  z-50 flex justify-between items-center p-6">
+      <NavLogo className="navLogo"/>
       <div>
-        <img className="h-16" src={logo} />
-      </div>
-      <div>
-        <ul className="flex flex-row items-center gap-3 font-cabinet font-light ">
+        <ul className="flex flex-row items-center gap-3 font-cabinet font-thin ">
           {links.map((link) => (
             <li key={link.label}>
               <p
-                className="link link-underline link-underline-black cursor-pointer text-xl"
+                className="link link-underline link-underline-black cursor-pointer text-xl text-[#5c5955]"
                 onClick={() => handleClick(link.ref)}
               >
                 {link.label}
@@ -138,7 +147,7 @@ const NavigationFull = ({ scrollToRef }: NavProps) => {
           </li>
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

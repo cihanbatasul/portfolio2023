@@ -11,21 +11,21 @@ const ContactDetails = () => {
       className="w-full  m-auto pt-12 pb-3 md:pt-0 md:pb-0 "
     >
       <div className="w-full flex flex-col items-center">
-        <h2 className="font-satoshi text-5xl antialiased">details</h2>
-        <div className=" mt-6 font-cabinet text-3xl flex  justify-between gap-3 items-center">
-          <MailsIcon /> <p>cihanbatas@gmail.com</p>
+        <h2 className="font-satoshi text-5xl antialiased text-[#393632]">details</h2>
+        <div className=" mt-6  font-cabinet text-3xl flex  justify-between gap-3 items-center">
+          <MailsIcon color="#5c5955"/> <p className="text-[#5c5955]">cihanbatas@gmail.com</p>
         </div>
 
         <div className=" mt-6 font-cabinet text-3xl flex gap-3 justify-between items-center">
-          <PhoneIcon /> <p>+49 176 24734003</p>
+          <PhoneIcon color="#5c5955" /> <p className="text-[#5c5955]">+49 176 24734003</p>
         </div>
       </div>
       <div className="w-full flex flex-col items-center">
-        <h2 className="font-satoshi text-5xl antialiased pt-6 ">socials</h2>
+        <h2 className="font-satoshi text-5xl antialiased pt-6 text-[#393632]">socials</h2>
         <div className=" mt-6 font-cabinet text-3xl flex   justify-between gap-3 items-center">
-          <GithubIcon />{" "}
+          <GithubIcon color="#5c5955" />{" "}
           <a
-            className="link link-underline link-underline-black cursor-pointer "
+            className="link text-[#5c5955] link-underline link-underline-black cursor-pointer "
             href="https://github.com/cihanbatasul"
             target="_blank"
           >
@@ -34,9 +34,9 @@ const ContactDetails = () => {
         </div>
 
         <div className=" mt-6 font-cabinet text-3xl flex gap-3 justify-between items-center">
-          <LinkedinIcon />{" "}
+          <LinkedinIcon color="#5c5955" />{" "}
           <a
-            className="link link-underline link-underline-black cursor-pointer "
+            className="link text-[#5c5955] link-underline link-underline-black cursor-pointer "
             href="https://linkedin.com/in/cihan-batasul-693504260"
             target="_blank"
           >

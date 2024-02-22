@@ -4,7 +4,7 @@ type Props = {
 
 const SectionHeader = (props: Props) => {
   return (
-    <h1 className=" mx-auto text-6xl md:text-8xl lg:text-9xl  leading-tight font-satoshi text-lightGreen ">
+    <h1 className=" mx-auto text-6xl md:text-8xl lg:text-9xl  leading-tight font-satoshi text-[#393632] ">
       {props.text.toUpperCase()}
     </h1>
   );

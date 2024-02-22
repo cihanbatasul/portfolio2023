@@ -6,13 +6,17 @@ type Props = {
   className: string;
 };
 
+const variants = {
+
+}
+
+
 const Paragraph = (props: Props) => {
   return (
     <motion.p 
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.6, ease: easeIn }}
-      viewport={{ once: true }}
+      initial={{ y: 30 }}
+      whileInView={{ y: 0 }}
+      transition={{ duration: 0.3, ease: easeIn }}
       className={cn(props.className)}
     >
       {props.text}

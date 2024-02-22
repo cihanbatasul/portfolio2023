@@ -20,7 +20,7 @@ const Contact = forwardRef<HTMLDivElement>((_, ref) => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.2, ease: easeIn }}
             viewport={{ once: true }}
-            className="font-cabinet text-2xl w-full"
+            className="font-cabinet text-2xl w-full text-[#5c5955]"
           >
             Feel free to send me an email. I will respond as soon as possible!{" "}
           </motion.p>

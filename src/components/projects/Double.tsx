@@ -74,24 +74,24 @@ const Double = (props: Props) => {
         <div className=" body text-base p-2.5  ">
           <div className="w-full flex flex-col md:flex-row gap-3 items-center">
             {" "}
-            <p className="font-satoshi text-xl md:text-4xl">
+            <p className="font-satoshi text-xl md:text-4xl text-[#5c5955]">
               {props.projects[1]?.year}
             </p>
             <div className=" outline-4">
               <ul className="list-none flex flex-wrap gap-3 py-4">
                 {props.projects[0].tech.map((tech) => (
                   <li>
-                    <p className="font-satoshi text-xl md:text-4xl">{tech}</p>{" "}
+                    <p className="font-satoshi text-xl md:text-4xl text-[#5c5955]">{tech}</p>{" "}
                   </li>
                 ))}
               </ul>
             </div>{" "}
           </div>
 
-          <div className="flex gap-3 items-center"><h3 className="text-[1.2em] mb-2 mt-0 font-satoshi">
+          <div className="flex gap-3 items-center"><h3 className="text-[1.2em] mb-2 mt-0 font-satoshi text-[#5c5955]">
             {props.projects[0]?.name}
           </h3><a href={props.projects[0].url} target="_blank"><MousePointer/></a></div>
-          <p className=" m-0 font-cabinet text-3xl">
+          <p className=" m-0 font-cabinet text-3xl text-[#5c5955]">
             {props.projects[0]?.description}
           </p>
         </div>
@@ -111,23 +111,23 @@ const Double = (props: Props) => {
         </div>
         <div className="body text-base p-2.5  ">
           <div className="flex flex-col md:flex-row gap-3 items-center">
-            <p className="font-satoshi text-xl md:text-4xl">
+            <p className="font-satoshi text-xl md:text-4xl text-[#5c5955]">
               {props.projects[1]?.year}
             </p>
             <div className=" outline-4">
-              <ul className="list-none flex  gap-3 py-4">
+              <ul className="list-none flex  gap-3 py-4 text-[#5c5955]">
                 {props.projects[1].tech.map((tech) => (
                   <li>
-                    <p className="font-satoshi text-xl md:text-4xl">{tech}</p>{" "}
+                    <p className="font-satoshi text-xl md:text-4xl ">{tech}</p>{" "}
                   </li>
                 ))}
               </ul>
             </div>{" "}
           </div>
-          <div className="flex gap-3 items-center"><h3 className="text-[1.2em] mb-2 mt-0 font-satoshi">
+          <div className="flex gap-3 items-center"><h3 className="text-[1.2em] mb-2 mt-0 font-satoshi text-[#5c5955]">
             {props.projects[1]?.name}
           </h3><a href={props.projects[1].url} target="_blank"><MousePointer/></a></div>
-          <p className=" m-0 text-3xl font-cabinet">
+          <p className=" m-0 text-3xl font-cabinet text-[#5c5955]">
             {props.projects[1]?.description}
           </p>
         </div>

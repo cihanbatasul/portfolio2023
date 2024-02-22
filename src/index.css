@@ -39,3 +39,34 @@
   background-size: 100% 3px;
   background-position: 0 100%;
 }
+
+
+.navLogo, .mobileNavLogo{
+  
+  background-image: linear-gradient(
+  60deg,
+  hsl(34deg 7% 21%) 0%,
+  hsl(37deg 7% 23%) 10%,
+  hsl(39deg 7% 24%) 20%,
+  hsl(42deg 7% 26%) 30%,
+  hsl(46deg 7% 28%) 40%,
+  hsl(49deg 7% 30%) 50%,
+  hsl(54deg 7% 31%) 60%,
+  hsl(59deg 7% 33%) 70%,
+  hsl(65deg 7% 35%) 80%,
+  hsl(71deg 7% 37%) 90%,
+  hsl(77deg 7% 39%) 100%
+);
+  border-radius: 100% 0% 0% 100% / 44% 45% 55% 56%;
+  transition: border-radius 500ms ease-in-out;
+}
+
+.navLogo {
+  height: 60px;
+  width: 60px;
+}
+.mobileNavLogo {
+  height: 30px;
+  width: 30px;
+}
+
