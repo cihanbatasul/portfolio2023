@@ -2,7 +2,6 @@ import ContactButton from "src/components/navbar/ContactButton";
 import MenuButton from "./MenuButton";
 import { AnimatePresence, easeIn, motion } from "framer-motion";
 import { useState } from "react";
-import logo from "/120.svg";
 
 interface NavProps {
   scrollToRef: {

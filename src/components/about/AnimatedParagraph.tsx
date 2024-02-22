@@ -1,5 +1,5 @@
 import { easeIn, motion } from "framer-motion"
-import { SetStateAction, Dispatch, useEffect } from "react"
+import { SetStateAction, Dispatch} from "react"
 type Props = {
   stateAction: Dispatch<SetStateAction<boolean>>
 }

@@ -5,6 +5,7 @@ interface Project {
   src: string;
   year: number;
   tech: string[];
+  url: string
 }
 
 type Props = {
@@ -20,11 +21,12 @@ const MobileProj = (props: Props) => {
           key={index}
         >
           <div className="relative">
-            <img
-              className={`object-cover rounded-lg`}
-              src={`/projectpics/${project.src}`}
-              alt="image"
-            />
+            <a href={props.projects[index].url} target="_blank"><img
+            
+            className={`object-cover rounded-lg`}
+            src={`/projectpics/${project.src}`}
+            alt="image"
+          /></a>
           </div>
           <div className="body text-base p-2.5">
             <div className="w-full flex flex-col md:flex-row gap-3 items-center">

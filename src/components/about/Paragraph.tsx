@@ -6,9 +6,7 @@ type Props = {
   className: string;
 };
 
-const variants = {
 
-}
 
 
 const Paragraph = (props: Props) => {
