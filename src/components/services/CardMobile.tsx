@@ -22,7 +22,7 @@ const CardMobile = (props: Props) => {
     <motion.div
     initial={{opacity: 0}}
     whileInView={{opacity: 1}}
-    transition={{ ease: [0.12, 0, 0.39, 0]}}
+    transition={{ ease: [0.12, 0, 0.39, 0], duration: 1}}
       className={`w-full h-[400px] rounded-md flex flex-col px-3 mt-12  items-center justify-center ${props.info.colorDynamic}  `}
     >
       <p className={`text-4xl font-satoshi pb-6 ${props.info.fontColorDynamic}`}>
