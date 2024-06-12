@@ -21,6 +21,7 @@ const CardMobile = (props: Props) => {
   return (
     <motion.div
     initial={{opacity: 0}}
+    viewport={{once: true}}
     whileInView={{opacity: 1}}
     transition={{ ease: [0.12, 0, 0.39, 0], duration: 1}}
       className={`w-full h-[400px] rounded-md flex flex-col px-3 mt-12  items-center justify-center ${props.info.colorDynamic}  `}

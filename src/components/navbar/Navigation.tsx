@@ -1,5 +1,6 @@
 import ContactButton from "src/components/navbar/ContactButton";
 import MenuButton from "./MenuButton";
+import Logo from "./Logo";
 import { AnimatePresence, easeIn, motion } from "framer-motion";
 import { useState } from "react";
 
@@ -41,18 +42,6 @@ const perspective = {
   },
 };
 
-type logoProps ={
-  className: string 
-}
-const NavLogo = ({className}: logoProps) => {
-
-  return (
-    <div className={className}>
-
-    </div>
-  )
-}
-
 const NavigationMobile = ({ scrollToRef }: NavProps) => {
   const links = [
     { label: "about", ref: scrollToRef.aboutRef },
@@ -66,7 +55,6 @@ const NavigationMobile = ({ scrollToRef }: NavProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   return (
     <div className="sticky z-50 top-0 flex justify-between  bg-white p-6 ">
-      <NavLogo className="mobileNavLogo"/>
       <motion.div
         variants={variants}
         animate={isActive ? "open" : "closed"}
@@ -128,7 +116,7 @@ const NavigationFull = ({ scrollToRef }: NavProps) => {
 
   return (
     <motion.div initial={{ opacity: 0}} animate={{opacity: 1 }} transition={{duration: 1.5, ease: easeIn, delay: 1.2}} className="sticky top-0 bg-white  z-50 flex justify-between items-center p-6">
-      <NavLogo className="navLogo"/>
+      <Logo/>
       <div>
         <ul className="flex flex-row items-center gap-3 font-cabinet font-thin ">
           {links.map((link) => (

@@ -31,7 +31,11 @@ const Home = () => {
   const setLimit = () => {
     setIsLimit(window.innerWidth <= 1536 && window.innerWidth > 640);
   };
-
+  const scrollToContact = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   useEffect(() => {
     window.addEventListener("resize", setMobile);
     window.addEventListener("resize", setLimit);
@@ -82,7 +86,7 @@ const Home = () => {
   return (
     <div className="relative">
       <Navigation scrollToRef={scrollToRef} isMobile={isMobile} />
-      <About ref={aboutRef} />
+      <About ref={aboutRef} scrollToContact={scrollToContact} />
       <Services ref={servicesRef} isMobile={isMobile} />
       <Projects ref={projectsRef} isMobile={isMobile} isLimit={isLimit} />
       <Contact ref={contactRef} />
